@@ -1,4 +1,4 @@
-declare module "gmail-tester" {
+declare module "gmail-tester-updated" {
   
   export interface Attachment {
     filename: string;
