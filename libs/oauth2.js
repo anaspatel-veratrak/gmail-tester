@@ -17,7 +17,6 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 const url = require("url");
-const opn = require("open");
 const destroyer = require("server-destroy");
 
 /**
@@ -57,9 +56,16 @@ async function authenticate(oauth2Client, scopes, tokensFile) {
             reject(e);
           }
         })
-        .listen(80, () => {
-          // open the browser to the authorize url to start the workflow
-          opn(authorizeUrl, { wait: false }).then(cp => cp.unref());
+        .listen(80, async () => {
+          // Dynamically import 'open' (ES module) inside an async context
+          try {
+            const open = (await import("open")).default;
+            // Open the browser to the authorize URL to start the workflow
+            open(authorizeUrl, { wait: false });
+          } catch (e) {
+            console.error("Error importing 'open' module:", e);
+            reject(e);
+          }
         });
       destroyer(server);
     } else {
