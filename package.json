@@ -1,6 +1,6 @@
 {
-  "name": "gmail-tester",
-  "version": "1.3.8",
+  "name": "gmail-tester-updated",
+  "version": "1.3.9",
   "description": "A simple NodeJS gmail client which checks the inbox for specific message existence",
   "main": "gmail-tester.js",
   "types": "gmail-tester.d.ts",
@@ -15,21 +15,22 @@
     "automation",
     "polling"
   ],
-  "author": "Lev Gelfenbuim <lev@webtestingwithcypress.com>",
+  "author": "AP",
   "license": "MIT",
   "dependencies": {
+    "gmail-tester-updated": "^1.3.9",
     "googleapis": "^144.0.0",
     "open": "^10.1.0",
     "server-destroy": "^1.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+github.com:levz0r/gmail-tester.git"
+    "url": "git+github.com:anaspatel-veratrak/gmail-tester.git"
   },
   "bugs": {
-    "url": "https://github.com/levz0r/gmail-tester/issues"
+    "url": "https://github.com/anaspatel-veratrak/gmail-tester/issues"
   },
-  "homepage": "https://github.com/levz0r/gmail-tester",
+  "homepage": "https://github.com/anaspatel-veratrak/gmail-tester",
   "devDependencies": {
     "jasmine": "^5.5.0"
   }
